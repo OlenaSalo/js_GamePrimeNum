@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display a confirm box.</p>
+
+<button onclick="confirmFunction()">Try it</button>
+
+<script>
+function confirmFunction() {
+   var r = confirm("Do you like to play!");
+   if (r == true) {     
+     randomTurn()
+   }
+    else {
+     alert("Not today!");
+   }
+   
+ }
+  
+  function randomTurn()
+  {
+    for(var i = 0; i<3; i++){
+    var gamer = prompt("Random number between 1 and 5. What is it?");
+    var randomNumber = Math.floor(Math.random() * 5 ) + 1;
+      if (parseInt(gamer) === randomNumber) {
+          document.write("Congratulations! You are winner!!");
+         }else if (i<3){
+          document.write("Try again ");
+            confirmFunction() 
+         }
+          else{
+        document.write("Sorry, you're loser today ");
+      }
+   }
+}
+ 
+</script>
+
+</body>
+</html> 
